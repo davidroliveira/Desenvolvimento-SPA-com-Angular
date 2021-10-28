@@ -1,7 +1,7 @@
 <div class="container main-container">
 
     <div class="row text-center">
-      
+
         <div *ngFor="let produto of produtos" class="col-md-4" style="padding-bottom: 30px;">
             <div class="card h-100">
                 <a class="text-decoration-none" [routerLink]="['/produto-detalhe',produto.id]">
@@ -9,12 +9,12 @@
                         <img src="/assets/{{produto.imagem}}" height="100 %" width="130 %" alt="">
                     </div>
                 </a>
-                <h4 class="card-title">{{produto.nome}}</h4>
+                <h4 class="card-title">{{produto.nome | titlecase}}</h4>
 
                 <div>
                     <p>Por apenas:</p>
                     <div>
-                        <h4>R$ {{produto.valor}}</h4>
+                        <h4>{{produto.valor| currency:'BRL':'symbol':'1.2-2':'pt' }}</h4>                        
                     </div>
                 </div>
 
